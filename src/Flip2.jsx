@@ -5,19 +5,26 @@ import { useState } from 'react';
 
 const Flip2 = () => {
     const [flip, setFlip] = useState("controlflip");
-    const hanldeflip =()=>{
-        setFlip("flipPart1")
-
-    }
+    const hanldeflipfront =()=>{
+        document.getElementById("flipPart2").style.transform ="rotateY(180deg)"
+        document.getElementById("flipPart1").style.transform ="rotateY(0deg)"
+        // setFlip("flipPart1")
+}
+const hanldeflipback =()=>{
+    setFlip("controlflip")
+    // document.getElementById("flipPart1").style.transform ="rotateY(-180deg)"
+    document.getElementById("flipPart1").style.transform ="rotateY(180deg)"
+    document.getElementById("flipPart2").style.transform ="rotateY(0deg)"
+}
     return (
         <section>
             <h1>Hello</h1>
             <div id='FlipCard' className=''>
-                <div className={`${flip}`}>
+                <div onClick={hanldeflipback}  id={`flipPart1`}>
                     <h1>Hello</h1>
 
                 </div>
-                <div onMouseEnter={hanldeflip} onMouseLeave={()=> setFlip("controlflip")} className='flipPart2'>
+                <div onClick={hanldeflipfront} id='flipPart2'>
                     <h1>Bye</h1>
                 </div>
 
