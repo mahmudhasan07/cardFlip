@@ -11,7 +11,7 @@ function App() {
   return (
     <>
        <div className="App">
-      {/* <FlipCard frontContent={<h1>Front Side</h1>} backContent={<h1>Back Side</h1>} /> */}
+      <FlipCard frontContent={<h1>Front Side</h1>} backContent={<h1>Back Side</h1>} />
       <Flip2></Flip2>
     </div>
     </>
